@@ -40,11 +40,11 @@ List any known issues here to help limit duplicate reports. (e.g., "Currently do
 
 ## Contributing
 
-We welcome contributions to improve this extension! Feel free to submit issues and pull requests to the [GitHub repository](https://github.com/yourusername/your-repo).
+We welcome contributions to improve this extension! Feel free to submit issues and pull requests to the [GitHub repository](https://github.com/Abdo-ka/Swagger-to-dart-route.git).
 
 ## Support
 
-If you encounter any issues or have any questions, please reach out via the [GitHub issues page](https://github.com/yourusername/your-repo/issues).
+If you encounter any issues or have any questions, please reach out via the [GitHub issues page](https://github.com/Abdo-ka/Swagger-to-dart-route.git/issues).
 
 ## Screenshots
 
