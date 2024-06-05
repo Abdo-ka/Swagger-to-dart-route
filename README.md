@@ -48,7 +48,10 @@ If you encounter any issues or have any questions, please reach out via the [Git
 
 ## Screenshots
 
-Include screenshots or gifs showing the extension in action.
+
+<div align="center">
+  <img src="./images/codeSample.png" alt="codeSample" width="100%">
+</div>
 
 ---
 
