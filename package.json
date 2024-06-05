@@ -1,9 +1,9 @@
 {
   "name": "swagger-dart-router",
   "displayName": "Swagger Dart Router",
-  "description": "Generate Dart routes from a Swagger file URL.",
+  "description": "Generate Dart routes from a Swagger Json file.",
   "version": "0.0.1",
-  "publisher": "mypublisher",
+  "publisher": "Abd Alrahman Kanawti",
   "engines": {
     "vscode": "^1.50.0"
   },
@@ -18,7 +18,7 @@
     "commands": [
       {
         "command": "extension.generateDartRoutes",
-        "title": "Generate Dart Routes from Swagger"
+        "title": "Generate Dart Routes from Json Swagger"
       }
     ]
   },
