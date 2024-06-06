@@ -6,7 +6,6 @@ const path = require('path');
 
 async function generateDartRoutesFromSwagger(swaggerFileUrl, outputFile) {
     try {
-        // Use vscode.window.withProgress() to show a loading indicator
         await vscode.window.withProgress({
             location: vscode.ProgressLocation.Window,
             title: "Fetching Swagger data...",
@@ -21,16 +20,31 @@ async function generateDartRoutesFromSwagger(swaggerFileUrl, outputFile) {
             const paths = swagger.paths;
 
             const routesByScope = {};
+            const processedEndpoints = new Set();  // Set to track processed endpoints
+
             for (const path in paths) {
                 const methods = paths[path];
                 for (const method in methods) {
-                    let variableName = path.split('/').pop();
+                    let variableName = path.split('/').pop().replace(/{|}/g, ''); // Remove braces from variable name
                     variableName = variableName.charAt(0).toLowerCase() + variableName.slice(1);
 
-                    const route = `static const ${variableName} = '${path}';`;
+                    let route;
+                    if (path.includes('{')) {
+                        // Extract the parameter name(s) and construct the Dart route
+                        const params = path.match(/{(.*?)}/g).map(param => param.replace('{', '').replace('}', ''));
+                        const dartPath = path.replace(/{(.*?)}/g, '$$$1');
+                        route = `static ${variableName}(${params.join(', ')}) => '${dartPath}';`;
+                    } else {
+                        route = `static const ${variableName} = '${path}';`;
+                    }
+
+                    // Check if the route has already been processed
+                    if (processedEndpoints.has(route)) {
+                        continue;
+                    }
+                    processedEndpoints.add(route);
 
                     const scope = path.split('/')[2];
-
                     if (!routesByScope[scope]) {
                         routesByScope[scope] = [];
                     }
@@ -38,21 +52,16 @@ async function generateDartRoutesFromSwagger(swaggerFileUrl, outputFile) {
                 }
             }
 
-            // Get the first workspace folder path
             const workspaceFolders = vscode.workspace.workspaceFolders;
             if (!workspaceFolders || workspaceFolders.length === 0) {
                 throw new Error('No workspace folder opened.');
             }
             const workspacePath = workspaceFolders[0].uri.fsPath;
-
-            // Define the output file path relative to the workspace folder
             const outputFilePath = path.join(workspacePath, outputFile);
 
             const stream = fs.createWriteStream(outputFilePath);
             stream.write('// This file is generated. Do not edit it manually\n\n');
             stream.write('class ApiRoutes {\n');
-
-            // Write the baseUrl after class declaration
             stream.write(`  static const baseUrl = '${baseUrl}';\n\n`);
 
             for (const scope in routesByScope) {
@@ -79,7 +88,6 @@ function activate(context) {
             return;
         }
 
-        // Check if the URL ends with '.json'
         if (!swaggerFileUrl.endsWith('.json')) {
             vscode.window.showErrorMessage('URL must end with ".json"');
             return;
