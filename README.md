@@ -1,14 +1,14 @@
 # Swagger Dart Router VS Code Extension
 
-The **Swagger Dart Router** VS Code extension simplifies the process of generating Dart routes directly from a Swagger file. With just a few clicks, you can convert your Swagger API documentation into a Dart file containing all the necessary routes, organized by scope. This extension is perfect for Dart developers who want to streamline their API integration workflow and avoid manually typing out each route.
+The **Swagger Dart Router** VS Code extension simplifies the process of generating Dart routes directly from a Swagger Json File. With just a few clicks, you can convert your Swagger API documentation into a Dart file containing all the necessary routes, organized by scope. This extension is perfect for Dart developers who want to streamline their API integration workflow and avoid manually typing out each route.
 
 ## Features
 
-1. **Automatic Route Generation**: Automatically generates Dart routes based on the paths and methods defined in the Swagger file, reducing manual effort and potential errors.
+1. **Automatic Route Generation**: Automatically generates Dart routes based on the paths and methods defined in the Swagger Json File, reducing manual effort and potential errors.
 2. **Customizable Output**: Specify the output file name and location, allowing flexibility in integrating the generated routes into your Dart projects.
 3. **Scope-based Organization**: Routes are grouped by scope, making it easier to navigate and manage them within the generated Dart file.
 4. **CamelCase Naming**: Path segments are converted to camelCase for better readability and adherence to Dart naming conventions.
-5. **Error Handling**: Handles errors gracefully, providing informative messages in case of failures during Swagger file retrieval or route generation.
+5. **Error Handling**: Handles errors gracefully, providing informative messages in case of failures during Swagger Json File retrieval or route generation.
 6. **Generated File Comments**: Includes comments indicating that the Dart file is auto-generated, helping developers understand its purpose and avoid accidental modifications.
 7. **Dependency Management**: Relies on the `http` package for making HTTP requests and `dart:io` for file operations, ensuring compatibility with Dart projects and simplifying dependency management.
 8. **CLI Compatibility**: Easily integrates into continuous integration (CI) pipelines or build scripts as a command-line tool, enhancing automation capabilities.
@@ -36,7 +36,7 @@ The **Swagger Dart Router** VS Code extension simplifies the process of generati
 
 ## Known Issues
 
-List any known issues here to help limit duplicate reports. (e.g., "Currently does not support Swagger files with..." or "Known issue with paths containing special characters...")
+List any known issues here to help limit duplicate reports. (e.g., "Currently does not support Swagger Json Files with..." or "Known issue with paths containing special characters...")
 
 ## Contributing
 

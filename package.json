@@ -3,7 +3,8 @@
   "displayName": "Swagger Dart Router",
   "description": "Generate Dart routes from a Swagger Json file.",
   "version": "0.0.1",
-  "publisher": "Abd Alrahman Kanawti",
+  "publisher": "AbdAlrahmanKanawati",
+  "icon": "./images/logo.jpeg",
   "repository": {
     "type": "git",
     "url": "https://github.com/Abdo-ka/Swagger-to-dart-route.git"
