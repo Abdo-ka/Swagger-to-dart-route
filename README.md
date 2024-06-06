@@ -10,10 +10,7 @@ The **Swagger Dart Router** VS Code extension simplifies the process of generati
 4. **CamelCase Naming**: Path segments are converted to camelCase for better readability and adherence to Dart naming conventions.
 5. **Error Handling**: Handles errors gracefully, providing informative messages in case of failures during Swagger Json File retrieval or route generation.
 6. **Generated File Comments**: Includes comments indicating that the Dart file is auto-generated, helping developers understand its purpose and avoid accidental modifications.
-7. **Dependency Management**: Relies on the `http` package for making HTTP requests and `dart:io` for file operations, ensuring compatibility with Dart projects and simplifying dependency management.
-8. **CLI Compatibility**: Easily integrates into continuous integration (CI) pipelines or build scripts as a command-line tool, enhancing automation capabilities.
-9. **Community Support**: Being open-source, it benefits from community contributions and feedback, ensuring continuous improvement and adaptation to evolving needs.
-10. **Cross-platform Compatibility**: Dart is a versatile language, and the generated routes can be used in various Dart environments, including Flutter apps, web applications, and server-side Dart projects.
+7. **Cross-platform Compatibility**: Dart is a versatile language, and the generated routes can be used in various Dart environments, including Flutter apps, web applications, and server-side Dart projects.
 
 ## Installation
 

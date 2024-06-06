@@ -26,3 +26,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 - Fixed an issue where variable names derived from path segments incorrectly included braces, ensuring correct Dart route generation.
+
+## [0.1.1] - 2024-06-06
+### Added
+- Added handling for parameterized endpoints in the Swagger file. The extension now correctly generates Dart routes with parameter names extracted from the URL paths. For example, `/user/{username}` will generate `static username(username) => '/user/$username';`.
+
+### Fixed
+- Fixed an issue where variable names derived from path segments incorrectly included braces, ensuring correct Dart route generation.
